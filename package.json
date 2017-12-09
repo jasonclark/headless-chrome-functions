@@ -1,0 +1,19 @@
+{
+  "name": "headless-chrome",
+  "version": "1.0.0",
+  "description": "using headless chrome to scrape website content, make screenshots, check web performance using node.js Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "headless-chrome",
+    "web-scraping"
+  ],
+  "author": "@jaclark Jason A. Clark",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^0.13.0"
+  }
+}
