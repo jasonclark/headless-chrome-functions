@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# hide Mac OS system files
+.DS_Store
