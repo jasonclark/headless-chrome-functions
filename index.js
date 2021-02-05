@@ -5,9 +5,11 @@
 
 const puppeteer = require('puppeteer');
 
+//create mobile screenshot
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  await page.emulate(puppeteer.devices['iPhone 6']);
   await page.goto('http://jasonclark.info', {waitUntil: 'networkidle2'});
   //await page.setViewport({width: 1000, height: 500})
   await page.screenshot({path: 'example.png', fullPage: true});
@@ -34,7 +36,7 @@ const puppeteer = require('puppeteer');
   await page.click('input[type="submit"]');
 
   //wait for results
-  await page.waitForSelector('h3 a');
+  await page.waitForSelector('div.g a');
 
 /*
   const links = await page.$$eval('h3 a', results => {
@@ -43,7 +45,7 @@ const puppeteer = require('puppeteer');
 
   //extract the results from the page
   const links = await page.evaluate(() => {
-    const anchors = Array.from(document.querySelectorAll('h3 a'));
+    const anchors = Array.from(document.querySelectorAll('div.g a'));
     return anchors.map(anchor => anchor.textContent);
   });
   console.log(links.join('\n'));  
